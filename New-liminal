@@ -1,0 +1,289 @@
+/* 按钮更改 */
+/*
+by NoRaNetaN
+*/
+@import url(https://fnhanbao.wdfiles.com/local--theme/wonder1/style.css);
+@import url(https://fnhanbao.wdfiles.com/local--theme/wonder11/style.css);
+@import url(https://fnhanbao.wdfiles.com/local--theme/wonder9/style.css);
+:root {
+    /* S-CSS-P */
+    --theme-base: "black-highlighter";
+    --theme-id: "Backrooms-Snewrooms";
+    --theme-name: "Backrooms-Snewrooms Theme";
+    /* 基本版头设置 */
+    --logo-image: url("https://backroomss.wikidot.com/local--files/start/logo-head");
+    --header-title: "The Backrooms";
+    --header-subtitle: "You've been here before.";
+    --swatch-headerh1-color: var(--white-monochrome);
+    --swatch-headerh2-color: var(--white-monochrome);
+    --sidebar-width-on-desktop: calc((var(--base-font-size) * (14 / 15)) * 19);
+    --body-width-on-desktop: 45.75rem;    --sidebar-width-on-desktop: calc((var(--base-font-size) * (14 / 15)) * 19);
+    --body-width-on-desktop: 45.75rem;
+    /* 字体 */
+    --body-font: 'Lato', Inter, Verdana, Geneva, "Helvetica Neue", "Helvetica", sans-serif;
+    --UI-font: 'Lato', Arial, PTRootUI, -apple-system, system-ui, BlinkMacSystemFont,
+        "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantrell, "Helvetica Neue",
+        sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --header-font: 'Fantasque Sans Mono', Courier New, Ubuntu Mono, Consolas, monospace;
+    --title-font: var(--header-font);
+    --mono-font: 'Fantasque Sans Mono', Recursive, Consolas, monaco, monospace;
+ 
+    /* 基本标记笔color */
+    --white-monochrome: 252, 252, 252; /* ALTERED */
+    --pale-gray-monochrome: 237, 233, 223; /* ALTERED */
+    --light-pale-gray-monochrome: 237, 233, 223;
+    --very-light-gray-monochrome: 220, 215, 210;
+    --light-gray-monochrome: 165, 160, 155;
+    --gray-monochrome: 72, 69, 60;
+    --dark-gray-monochrome: 64, 63, 52;
+    --black-monochrome: 25, 20, 16;
+    --pale-accent: 230, 23, 68;
+    --bright-accent: 140, 136, 126;
+    --medium-accent: 72, 69, 60;
+    --dark-accent: 140, 136, 126;
+    --alt-accent: 221, 102, 17;
+ 
+    /* Liminal Variables */
+    --header-text-shadow: 0px 2px 3px rgba(0,0,0,0.8);
+    --header-text-shadow-hover: 0px 5px 3px rgba(0,0,0,0.3);
+    --quote-shadow: 0 2px 4px rgba(var(--black-monochrome),0.25);
+    --footer-message: var(--header-subtitle);
+ 
+    --swatch-sidebar-collapsible-tab-bg: var(--swatch-primary);
+ 
+   /* MOST THEMES SHOULDN'T CHANGE THIS: makes editing consistent across themes, adds programing ligatures */
+    --editor-font: 'Fantasque Sans Mono', Recursive, Consolas, monaco, monospace;
+ 
+    /* Swatches */
+    --swatch-secondary-color: var(--white-monochrome);
+    --swatch-menubg-color: var(--white-monochrome);
+    --rating-module-bg-color: var(--swatch-menubg-color);
+ 
+   --toc-body-bg-color: var(--white-monochrome);
+ 
+    --gradient-header: linear-gradient(to top,
+        rgba(var(--medium-accent)) 0%,
+        rgba(var(--medium-accent), 0.90) 100%
+    );
+ 
+    --diagonal-stripes: transparent;
+    --background-gradient-distance: 0;
+    --scrollbar-width: 0.7rem;
+    --swatch-background: var(--pale-gray-monochrome);
+    --swatch-topmenu-border-color: var(--medium-accent);
+ 
+     --sidebar-width-on-desktop: calc(var(--base-font-size) * (266 / 15));
+     --body-width-on-desktop: 45.75rem;
+}
+ 
+/* 版头居中 */
+/* Header Image */
+#header {
+    background-image: none;
+}
+ 
+#header::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-image: var(--logo-image);
+    background-size: auto 16rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.4;
+}
+ 
+/* Header Text */
+#header h1 { width: 100%; }
+ 
+#header h1 a, #header h1 a:before {
+    width: fit-content;
+    transition: 0.2s;
+    position: relative;
+    bottom: 0;
+    color: rgb(var(--swatch-headerh1-color));
+}
+ 
+#header h1 a:hover:before {
+    text-shadow: var(--header-text-shadow-hover);
+    bottom: 3px;
+}
+ 
+#header h1, #header h1 a {
+    position: absolute;
+    top: 1rem;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    z-index: 0;
+    height: 1.5rem;
+}
+ 
+#header h2, #header h2 span, #header h2 span::before {
+    position: absolute;
+    top: 1.85rem;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+ 
+#header h2 span::before { color: rgb(var(--swatch-headerh2-color)); }
+ 
+#header h1 a::before, #header h2 span::before {
+    text-shadow: var(--header-text-shadow);
+}
+/* Div */
+.styled-quote {
+    background-color: rgb(var(--pale-gray-monochrome));
+    border-left: 0.2rem solid rgba(var(--gray-monochrome));
+    padding: 0.1rem 1rem;
+    margin: 0.5rem 0 0.5rem 0.25rem;
+    box-shadow: 0.05rem 0.1rem 0.3rem rgba(var(--black-monochrome), 0.25);
+}
+ 
+.styled-quote-B {
+    background-color: rgb(var(--pale-gray-monochrome));
+    border-left: 0.2rem solid rgba(var(--gray-monochrome));
+    padding: 0.1rem 1rem;
+    margin: 0.5rem 0 0.5rem 0.25rem;
+    box-shadow: 0.05rem 0.1rem 0.3rem rgba(var(--black-monochrome), 0.25);
+    border-radius: 10px;
+}
+ 
+.dark-styled-quote {
+    background-color: rgb(var(--gray-monochrome));
+    border-left: 0.2rem solid rgba(var(--pale-gray-monochrome));
+    color: rgb(var(--white-monochrome));
+    padding: 0.1rem 1rem;
+    margin: 0.5rem 0 0.5rem 0.25rem;
+    box-shadow: 0.05rem 0.1rem 0.3rem rgba(var(--black-monochrome), 0.25);
+}
+ 
+.dark-styled-quote a {
+    color: rgb(var(--swatch-menubg-medium-color));
+}
+ 
+.dark-styled-quote-B {
+    background-color: rgb(var(--gray-monochrome));
+    border-left: 0.2rem solid rgba(var(--pale-gray-monochrome));
+    color: rgb(var(--white-monochrome));
+    padding: 0.1rem 1rem;
+    margin: 0.5rem 0 0.5rem 0.25rem;
+    box-shadow: 0.05rem 0.1rem 0.3rem rgba(var(--black-monochrome), 0.25);
+    border-radius: 10px;
+}
+ 
+.dark-styled-quote-B a {
+    color: rgb(var(--swatch-menubg-medium-color));
+}
+ 
+.lightblock {
+    background-color: rgb(var(--pale-gray-monochrome));
+    padding: 0.01rem 1rem;
+    margin: 0.5rem 0 0.5rem 0.25rem;
+    box-shadow: 0 0.2rem 0.3rem rgba(var(--black-monochrome), 0.25);
+}
+ 
+.lightblock-B {
+    background-color: rgb(var(--pale-gray-monochrome));
+    padding: 0.01rem 1rem;
+    margin: 0.5rem 0 0.5rem 0.25rem;
+    box-shadow: 0 0.2rem 0.3rem rgba(var(--black-monochrome), 0.25);
+    border-radius: 10px;
+}
+ 
+.darkblock {
+    background-color: rgb(var(--gray-monochrome));
+    color: rgb(var(--white-monochrome));
+    padding: 0.01rem 1rem;
+    margin: 0.5rem 0 0.5rem 0.25rem;
+    box-shadow: 0 0.2rem 0.3rem rgba(var(--black-monochrome), 0.25);
+}
+ 
+.darkblock a {
+    color: rgb(var(--swatch-menubg-medium-color));
+}
+ 
+.darkblock-B {
+    background-color: rgb(var(--gray-monochrome));
+    color: rgb(var(--white-monochrome));
+    padding: 0.01rem 1rem;
+    margin: 0.5rem 0 0.5rem 0.25rem;
+    box-shadow: 0 0.2rem 0.3rem rgba(var(--black-monochrome), 0.25);
+    border-radius: 10px;
+}
+ 
+.darkblock-B a {
+    color: rgb(var(--swatch-menubg-medium-color));
+}
+ 
+/* 侧栏 */
+ body.print-body {
+        --sidebar-width-on-desktop: 0;
+    }
+    body.print-body #main-content::before,
+    body.print-body #main-content::after {
+        display: none;
+    }
+}
+#main-content::after {
+    height: 13rem;
+    border-radius: 0 0.6rem 0.6rem 0;
+    background-color: rgb(var(--swatch-sidebar-collapsible-tab-bg));
+    top: calc(50vh - 6.5rem);
+    background-image: url("../image/sidebar-arrows.svg");
+}
+ 
+#interwiki,
+#side-bar {
+    --sidebar-bg-color: var(--swatch-secondary-color);
+    --sideblock-heading-bg-color: var(--swatch-primary);
+    --sideblock-heading-text-color: var(--swatch-text-secondary-color);
+}
+#interwiki .side-block,
+#side-bar .side-block {
+    margin: 0;
+    padding: 0;
+    box-shadow: inset calc(var(--sidebar-internal-border-thickness) * -1) 0 0 0 rgb(var(--swatch-border-color), 0.08), inset calc(var(--sidebar-internal-border-thickness)) 0 0 0 rgb(var(--swatch-border-color), 0.24);
+}
+#interwiki .side-block.media,
+#side-bar .side-block.media {
+    margin: 0;
+}
+#interwiki .side-block div.menu-item a,
+#side-bar .side-block div.menu-item a {
+    box-shadow: inset calc(var(--sidebar-internal-border-thickness) * -1) 0 0 0 rgb(var(--swatch-border-color), 0.16);
+}
+#interwiki .side-block div.menu-item a::before,
+#side-bar .side-block div.menu-item a::before {
+    background-color: rgba(var(--sidebar-links-hover-bg-color), 0.8);
+}
+#interwiki .side-block .heading,
+#side-bar .side-block .heading {
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+#interwiki .side-block .heading p,
+#side-bar .side-block .heading p {
+    --wght: 500;
+}
+#interwiki .side-block div.menu-item a[href="/"] + a[href="/forum:start"]:last-child, #interwiki .side-block div.menu-item:first-of-type a[href="/"], #interwiki .side-block div.menu-item:nth-of-type(2) a[href="/forum:start"],
+#side-bar .side-block div.menu-item a[href="/"] + a[href="/forum:start"]:last-child,
+#side-bar .side-block div.menu-item:first-of-type a[href="/"],
+#side-bar .side-block div.menu-item:nth-of-type(2) a[href="/forum:start"] {
+    justify-content: flex-start;
+    padding: 0 0 0 calc(var(--base-font-size) * 0.8666666667);
+}
+/* Root */
+:root:lang(cn) {
+ 
+    --logo-image: url("https://github.backroomswiki.cn/New_BHL/image/logo.svg");
+    --header-title: "The Backrooms S";
+    --header-subtitle: "You've been here before.";
+}
